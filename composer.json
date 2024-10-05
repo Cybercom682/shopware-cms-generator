@@ -10,7 +10,7 @@
         "homepage": "https://shapeandshift.dev"
     }],
     "require": {
-        "shopware/core": "~6.4.0"
+        "shopware/core": "~6.6.0"
     },
     "autoload": {
         "psr-4": {

@@ -12,14 +12,14 @@ use Symfony\Component\String\UnicodeString;
 
 class GenerateCmsElement extends Command
 {
-    public static $defaultName = 'sas:generate-cms:element';
+    protected static $defaultName = 'sas:generate-cms:element';
 
     private array $pluginInfos;
     private string $projectDir;
 
     public function __construct(string $projectDir, array $pluginInfos)
     {
-        parent::__construct();
+        parent::__construct(self::$defaultName);
         $this->pluginInfos = $pluginInfos;
         $this->projectDir = $projectDir;
     }
@@ -27,9 +27,9 @@ class GenerateCmsElement extends Command
     protected function configure(): void
     {
         $this
-        ->setDescription('Generates Cms Element Structure')
-        ->addArgument('elementName', InputArgument::REQUIRED, 'The name of the element.')
-        ->addArgument('pluginName', InputArgument::REQUIRED, 'Plugin Name');
+            ->setDescription('Generates Cms Element Structure')
+            ->addArgument('elementName', InputArgument::REQUIRED, 'The name of the element.')
+            ->addArgument('pluginName', InputArgument::REQUIRED, 'Plugin Name');
     }
 
     public function execute(InputInterface $input, OutputInterface $output): int

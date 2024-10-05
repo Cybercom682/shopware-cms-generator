@@ -13,14 +13,14 @@ use Symfony\Component\String\UnicodeString;
 
 class GenerateCmsBlock extends Command
 {
-    public static $defaultName = 'sas:generate-cms:block';
+    protected static $defaultName = 'sas:generate-cms:block';
 
     private array $pluginInfos;
     private string $projectDir;
 
     public function __construct(string $projectDir, array $pluginInfos)
     {
-        parent::__construct();
+        parent::__construct(self::$defaultName);
         $this->pluginInfos = $pluginInfos;
         $this->projectDir = $projectDir;
     }
